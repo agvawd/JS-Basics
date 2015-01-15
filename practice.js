@@ -6,6 +6,14 @@ var name = 'Tyler';
 //If the argument you passed in is equal to 'Tyler', return true. If it's not, return false.
 
   //Code Here
+var isTyler = function(name) {
+  if(name === 'Tyler')
+    return true;
+  else
+    return false;
+};
+
+isTyler(name);
 
 
 //Next problem
@@ -16,7 +24,12 @@ var name = 'Tyler';
 
 
   //Code Here
+var getName = function(){
+  var name = prompt("What is your name?: ");
+  return name;
+};
 
+//getName();
 
 //Next Problem
 
@@ -26,7 +39,11 @@ var name = 'Tyler';
 //then alerts "Welcome, " plus whatever the users name is.
 
   //Code Here
+var welcome = function(name) {
+  return "Welcome, " + name;
+};
 
+alert(welcome(getName()));
 
 //Next problem
 
@@ -38,8 +55,15 @@ var name = 'Tyler';
 //returned from adder.
 
   //Code Here
+var adder = function(numOne, numTwo, numThree, numFour) {
+  var total = 0;
+  for (var i = 0; i < arguments.length; i++)
+    total += arguments[i];
+  return total;
+};
 
-
+var result = adder(1,2,3,4);
+alert("The Total number was " + result);
 //Next Problem
 
 
@@ -47,7 +71,8 @@ var name = 'Tyler';
 //What is the difference between arguments and parameters?
 
   //Answer Here
-
+//parameters are in the function definintion.
+//Arguements are in the function invocation
 
 //Next problem
 
@@ -57,7 +82,8 @@ var name = 'Tyler';
 
 
   //Answer Here
-
+// falsy: 0, null, undefined, NaN
+// you can run something like if(name) and if it is falsey it will not run the code
 
 
 //Next Problem
@@ -67,14 +93,18 @@ var name = 'Tyler';
 //Create a function called myName that returns your name
 
   //Code Here
+var myName = function() {
+  return "Allen";
+}
 
 //Now save the function definition of myName into a new variable called newMyName
 
   //Code Here
+  var newMyName = myName();
 
 //Now alert the result of invoking newMyName
 
-
+alert(newMyName);
 
 //Next problem
 
@@ -83,9 +113,16 @@ var name = 'Tyler';
 //Create a function called outerFn which returns an anonymous function which returns your name.
 
   //Code Here
+var outerFn = function() {
+  return function() {
+    return "Allen";
+  };
+};
 
 //Now save the result of invoking outerFn into a variable called innerFn.
 
   //Code Here
+  var innerFn = outerFn();
 
 //Now invoke innerFn.
+innerFn();
